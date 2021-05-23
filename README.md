@@ -1,7 +1,7 @@
 [![Banner](https://media.discordapp.net/attachments/845026584750456873/846009650695766036/New_Project_55.png)](https://devpost.com/software/time-flow)
 
 ## Required Libraries:
-- PyAutoGUI - 'pip install pyautogui'
+- PyAutoGUI - ''' pip install pyautogui '''
 - Firebase Admin - 'pip install firebase-admin'
 - Pillow - 'pip install pillow'
 
