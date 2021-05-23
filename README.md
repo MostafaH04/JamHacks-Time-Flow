@@ -1,20 +1,11 @@
 [![Banner](https://media.discordapp.net/attachments/845026584750456873/846009650695766036/New_Project_55.png)](https://devpost.com/software/time-flow)
 
 ## Required Libraries:
-- PyAutoGUI 
-'''
-pip install pyautogui
-'''
+- PyAutoGUI `pip install pyautogui`
 
-- Firebase Admin
-'''
-pip install firebase-admin
-'''
+- Firebase Admin `pip install firebase-admin`
 
-- Pillow
-'''
-pip install pillow
-'''
+- Pillow `pip install pillow`
 
 ## 💡 Inspiration
 For the past year, all of us, similar to many students around the world were forced to switch to an online learning model. Now, spending most of our time in front of our devices, either working, or being distracted. So for JamHacks, we decided to create an application that motivates us to break these unhealthy habits through a competition. Which is why we created workflow, to try and put a measurement to our productivity and motivate ourselves to take health breaks between working sessions, while competing with friends and collogues to see who is "more" productive.
