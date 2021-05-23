@@ -46,7 +46,7 @@ def success():
     success.geometry("200x200")
     success['background'] = '#4C4FEC'
     success.wm_iconbitmap('icon.ico')
-    Label(success, text = f"Login\nSuccessful\n{userString}\nclose to\nbegin", bg = '#4C4FEC', fg = "white", font = ('sans-serif', 16)).pack(pady = 50)
+    Label(success, text = f"Login\nSuccessful\n{userString}\nclose to\nbegin", bg = '#4C4FEC', fg = "white", font = ('sans-serif', 16)).pack(pady = 20)
 
 
 

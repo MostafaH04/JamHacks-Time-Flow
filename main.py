@@ -7,6 +7,8 @@ from firebase_admin import initialize_app
 from firebase_admin import db
 from signin import signup
 from reference import reference
+import pyautogui
+from rest import work
 
 unwantedDelay = 60 * 60
 deduct = False
@@ -15,7 +17,6 @@ def checkUnwanted(currTimeUnwanted):
     if time.time() - currTimeUnwanted > unwantedDelay:
         return True
     pass
-
 
 ref = db.reference("/Users")
 ref2 = db.reference("/bad")
@@ -50,7 +51,7 @@ if logged == True:
 
 pointsPositive = 3
 pointsNegative = -1
-pointsUnwanted = -0.5
+pointsUnwanted = -2
 
 posPerApp = 0.01
 negPerApp = 0.005
@@ -63,6 +64,17 @@ currTime = time.time()
 currTimeUnwanted = time.time()
 timeDelay = 60
 
+mouseOld = pyautogui.position()
+
+timeOutDelay = 60
+
+currTimeMouse = time.time()
+
+onComputer = True
+
+onMax = 60*60
+
+currTimeOn = time.time()
 
 while True:
     file2 = open(r"logged.txt","r")
@@ -73,15 +85,26 @@ while True:
         logged = True
     file2.close()
 
+    if mouseOld == pyautogui.position():
+        if time.time() - currTimeMouse > timeOutDelay:
+            onComputer = False
+    else:
+        currTimeMouse = time.time()
+        onComputer = True
+
+    if onComputer == True:
+        if time.time() - currTimeOn > onMax:
+            unHealthy = True
+    else:
+        currTimeOn = time.time()
+        unHealthy = False
+
     if logged == True:
         users = ref.get()
-        print(len(users))
         userPos = None
-        print(users)
         keyList = []
         for key in users.keys():
             keyList.append(key)
-        print(keyList)
         for userNum in range(len(users)):
             if user == users[keyList[userNum]]['username']:
                 ref.child(keyList[userNum]).update({"points": points})
@@ -100,7 +123,6 @@ while True:
             temp1 = set(currOpen).difference(set(openApps))
             temp2 = set(openApps).difference(set(currOpen))
             for stuff in temp1:
-                print(stuff + " in")
                 openApps.append(stuff)
 
                 for i in badApps:
@@ -111,7 +133,6 @@ while True:
                         preferredOpen.append(stuff)
 
             for stuff in temp2:
-                print(stuff + " out") 
                 openApps.pop(openApps.index(stuff))
                 if stuff in unwantedAppsOpen:
                     unwantedAppsOpen.pop(unwantedAppsOpen.index(stuff))
@@ -119,7 +140,6 @@ while True:
                     preferredOpen.pop(preferredOpen.index(stuff))
         
         unwantedNum, wantedNum = len(unwantedAppsOpen), len(preferredOpen)
-        print(f"\n\nUnwanted: {unwantedNum}-{unwantedAppsOpen}\nWanted: {wantedNum}-{preferredOpen}")
 
         if unwantedNum > 0:
             unWanted = True
@@ -130,24 +150,24 @@ while True:
         else: wanted = False
 
 
+        if onComputer == True:
+            if time.time() - currTime > timeDelay:
+                if wanted == True:
+                    points += pointsPositive + ((0.01) * wantedNum)
+                
+                if unWanted == True:
+                    deduct = checkUnwanted(currTimeUnwanted)
+                    if deduct:
+                        points += pointsNegative - ((0.005) * unwantedNum) 
+                else:
+                    currTimeUnwanted = time.time()
 
-        if time.time() - currTime > timeDelay:
-            if wanted == True:
-                points += pointsPositive + ((0.01) * wantedNum)
-            
-            if unWanted == True:
-                deduct = checkUnwanted(currTimeUnwanted)
-                if deduct:
-                    points += pointsNegative - ((0.005) * unwantedNum) 
-            else:
-                currTimeUnwanted = time.time()
+                if unHealthy == True:
+                    work()
+                    points += pointsUnwanted
+                
+                currTime = time.time()
 
-            if unHealthy == True:
-                points += pointsUnwanted
-            
-            currTime = time.time()
-
-            print(points)
     else:
         signup()
         file = open(r"scores.txt", "r")
