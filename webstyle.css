@@ -1,0 +1,19 @@
+#background{
+    background-color:lightskyblue;
+}
+
+
+#mainTitle{
+    padding-top: 17%;
+    padding-left: 43%;
+    padding-right: 50%
+    
+}
+
+
+.account{
+    display: flexbox;
+    padding-top: 10%;
+    padding-left:43%;
+    padding-right:50%;
+}
