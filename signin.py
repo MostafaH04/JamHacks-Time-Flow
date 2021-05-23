@@ -43,3 +43,4 @@ def signup():
     mainloop()
 
 
+signup()
