@@ -32,5 +32,7 @@ We believe that Time Flow can definitely be improved upon with more time. Some n
 
 Overall, we believe that these ideas would help motivate more people to use Time flow in order to improve upon their time management habits, improve productivity, and compete against friends.
 <br/>
+<br/>
+<br/>
 💻 Devpost: 
 
