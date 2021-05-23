@@ -11,11 +11,11 @@ We built the workflow desktop tracking application using python, utilizing the t
 Having no knowledge about firebase or tkinter, and minimal to no knowledge about developing a website that would allow users to sign in. We had to learn how to use these tools in order to finish our project during the duration of the hackathon, and some main challenges that we faced with them were:
 1) Accessing the list of open processes and programs to track productive and non productive processes 
 2) Creating log-in and registration interfaces for the program
-3)a. Setting up a database to store the user information
-3)b. Adding user information to the database
-4) Getting the user's information on startup
-5) Accessing the database information through JS for the website
-6) Setting up a pop-up to prompt the user to take a break
+3) Setting up a database to store the user information
+4) Adding user information to the database
+5) Getting the user's information on startup
+6) Accessing the database information through JS for the website
+7) Setting up a pop-up to prompt the user to take a break
 
 ## Accomplishments that we're proud of
 Working on workflow, and seeing what we have achieved, we are quite proud of what we were able to learn and implement during the 24 hours. Firstly, we are proud of what learned about what firebase was, and how we used it with python and JS. We are also proud of the GUI we created, as it was our first time using tkinter for a project, having to learn more about how it works and the different elements that can be used. Lastly, we are also proud of being able to connect a python application to a web page that is able to use the data collected by the application locally to display the users' personal points and how they compare to others.
