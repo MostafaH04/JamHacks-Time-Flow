@@ -10,7 +10,7 @@
 ## 💡 Inspiration
 For the past year, all of us, similar to many students around the world were forced to switch to an online learning model. Now, spending most of our time in front of our devices, either working, or being distracted. So for JamHacks, we decided to create an application that motivates us to break these unhealthy habits through a competition. Which is why we created workflow, to try and put a measurement to our productivity and motivate ourselves to take health breaks between working sessions, while competing with friends and collogues to see who is "more" productive.
 
-## ⚙️ What it does
+## ⚙️ What it does?
 Workflow essentially works in the background tracking which applications and processes are running, and based on a predefined list of productive and non-productive apps. After extended work sessions, the application notifies the user that they should take a break, which is tracked by checking the user's activity. The application is able to award the user points for using productivity and work applications, such as Microsoft Word, Excel, PowerPoint, and even Notion. Whilst also tracking some games. These applications are just what is defined right now, but the application bases these apps through the list on our firebase database. Besides that, to motivate the users to get up and walk around for a break, the application starts deducting points slowly. The application is able to then send these stored points to our firebase database, where the points along with the user's username and password are stored. This information was planned to be then used on the website to allow the users to sign in, and check out the leaderboards.
 
 ## 🐱‍💻 How we built it
